@@ -11,6 +11,7 @@ datagroup: pendo_sandbox_default_datagroup {
 persist_with: pendo_sandbox_default_datagroup
 
 explore: pageevents {
+  label: "Pendo Sandbox Page Events"
   view_name: page_events
 
   join: all_pages {
