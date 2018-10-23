@@ -20,3 +20,14 @@ explore: pageevents {
     sql_on: ${page_events.page_id} = ${all_pages.id} ;;
   }
 }
+
+explore: feature_events {
+  label: "Pendo Sandbox Feature Events"
+  view_name: feature_events
+
+  join: all_features {
+    view_label: "Page Events"
+    relationship: many_to_one
+    sql_on: ${feature_events.feature_id} = ${all_features.id} ;;
+  }
+}
