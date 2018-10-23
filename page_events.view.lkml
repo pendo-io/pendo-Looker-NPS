@@ -51,7 +51,7 @@ view: page_events {
     sql: ${TABLE}."visitorId" ;;
   }
 
-  measure: count {
+  measure: page_event_count {
     type: count
     drill_fields: []
   }

@@ -51,7 +51,7 @@ view: feature_events {
     sql: ${TABLE}."visitorId" ;;
   }
 
-  measure: count {
+  measure: feature_event_count {
     type: count
     drill_fields: []
   }
