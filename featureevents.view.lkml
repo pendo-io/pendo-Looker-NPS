@@ -1,4 +1,5 @@
 view: featureevents {
+  label: "Feature Events"
   sql_table_name: PENDO.FEATUREEVENTS ;;
 
   dimension: account_id {

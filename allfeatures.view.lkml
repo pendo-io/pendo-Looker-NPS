@@ -1,4 +1,5 @@
 view: allfeatures {
+  label: "All Features"
   sql_table_name: PENDO.ALLFEATURES ;;
 
   dimension: id {
@@ -10,10 +11,5 @@ view: allfeatures {
   dimension: feature_name {
     type: string
     sql: ${TABLE}."name" ;;
-  }
-
-  measure: count {
-    type: count
-    drill_fields: [id, feature_name]
   }
 }
