@@ -1,4 +1,5 @@
 view: allpages {
+  label: "All Pages"
   sql_table_name: PENDO.ALLPAGES ;;
 
   dimension: id {
