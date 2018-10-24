@@ -9,3 +9,8 @@ datagroup: pendo_sandbox_default_datagroup {
 }
 
 persist_with: pendo_sandbox_default_datagroup
+
+
+explore: featureevents {
+  label: "Pendo Sandbox Feature Events"
+  view_name: featureevents}
