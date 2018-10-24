@@ -12,9 +12,4 @@ view: allpages {
     type: string
     sql: ${TABLE}."name" ;;
   }
-
-  measure: count {
-    type: count
-    drill_fields: [id, page_name]
-  }
 }
