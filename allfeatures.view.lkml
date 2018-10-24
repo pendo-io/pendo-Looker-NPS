@@ -7,13 +7,13 @@ view: allfeatures {
     sql: ${TABLE}."id" ;;
   }
 
-  dimension: name {
+  dimension: feature_name {
     type: string
     sql: ${TABLE}."name" ;;
   }
 
   measure: count {
     type: count
-    drill_fields: [id, name]
+    drill_fields: [id, feature_name]
   }
 }

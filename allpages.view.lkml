@@ -7,13 +7,13 @@ view: allpages {
     sql: ${TABLE}."id" ;;
   }
 
-  dimension: name {
+  dimension: page_name {
     type: string
     sql: ${TABLE}."name" ;;
   }
 
   measure: count {
     type: count
-    drill_fields: [id, name]
+    drill_fields: [id, page_name]
   }
 }
