@@ -1,5 +1,5 @@
 view: feature_events {
-  sql_table_name: PENDO.featureEvents ;;
+  sql_table_name: PENDO.FEATUREEVENTS ;;
 
   dimension: account_id {
     type: string

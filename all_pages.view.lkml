@@ -1,5 +1,5 @@
 view: all_pages {
-  sql_table_name: PENDO.allPages ;;
+  sql_table_name: PENDO.ALLPAGES ;;
 
   dimension: id {
     primary_key: yes

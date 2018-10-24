@@ -1,5 +1,5 @@
 view: page_events {
-  sql_table_name: PENDO.pageEvents ;;
+  sql_table_name: PENDO.PAGEEVENTS ;;
 
   dimension: account_id {
     type: string

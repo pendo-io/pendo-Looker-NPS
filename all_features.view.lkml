@@ -1,5 +1,5 @@
 view: all_features {
-  sql_table_name: PENDO.allFeatures ;;
+  sql_table_name: PENDO.ALLFEATURES ;;
 
   dimension: id {
     primary_key: yes
