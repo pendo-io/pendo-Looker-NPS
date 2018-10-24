@@ -1,4 +1,5 @@
 view: pageevents {
+  label: "Page Events"
   sql_table_name: PENDO.PAGEEVENTS ;;
 
   dimension: account_id {
