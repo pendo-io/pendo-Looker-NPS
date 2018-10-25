@@ -37,3 +37,8 @@ explore: internalnps {
   label: "Pendo Internal NPS"
   view_name: internalnps
 }
+
+explore: internalvox {
+  label: "Pendo Internal Vox Signups"
+  view_name: internalvox
+}
