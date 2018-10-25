@@ -32,3 +32,8 @@ explore: pageevents {
     sql_on: ${pageevents.page_id} = ${allpages.id} ;;
   }
 }
+
+explore: internalnps {
+  label: "Pendo Internal NPS"
+  view_name: internalnps
+}
