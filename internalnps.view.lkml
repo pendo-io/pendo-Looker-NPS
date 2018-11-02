@@ -37,7 +37,6 @@ view: internalnps {
   }
 
   measure: email_or_web {
-    type: count_distinct
-    sql: ${TABLE}."channel" ;;
+    type: count
   }
 }
