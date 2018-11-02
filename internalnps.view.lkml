@@ -35,4 +35,9 @@ view: internalnps {
     type: count
     drill_fields: []
   }
+
+  measure: email_or_web {
+    type: count_distinct
+    sql: ${TABLE}."channel" ;;
+  }
 }
