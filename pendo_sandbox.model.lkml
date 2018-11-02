@@ -44,6 +44,11 @@ explore: pendo_agg_nps {
   view_name: pendo_agg_nps
 }
 
+explore: pendo_agg_events {
+  label: "Pendo Internal Agg Events"
+  view_name: pendo_agg_events
+}
+
 explore: internalvox {
   label: "Pendo Internal Vox Signups"
   view_name: internalvox

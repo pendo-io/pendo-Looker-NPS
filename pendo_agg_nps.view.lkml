@@ -5,7 +5,7 @@ view: pendo_agg_nps {
     hidden: yes
     primary_key: yes
     type: string
-    sql: CONCAT(${TABLE}.visitorID,cast(${TABLE}.browsertime as string)) ;;
+    sql: CONCAT(${TABLE}.visitorId,cast(${TABLE}.browsertime as string)) ;;
   }
 
   dimension: account_id {
