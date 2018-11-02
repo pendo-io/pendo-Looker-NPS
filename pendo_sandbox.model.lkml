@@ -10,6 +10,7 @@ datagroup: pendo_sandbox_default_datagroup {
 
 persist_with: pendo_sandbox_default_datagroup
 
+include: "*.dashboard.lookml"
 
 explore: featureevents {
   label: "Pendo Sandbox Feature Events"
