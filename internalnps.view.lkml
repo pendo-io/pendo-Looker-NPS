@@ -1,91 +1,101 @@
 view: internalnps {
   sql_table_name: PENDO.INTERNALNPS ;;
 
-  dimension: account_id {
+  dimension: accountid {
     type: string
-    sql: ${TABLE}."accountId" ;;
+    sql: ${TABLE}."ACCOUNTID" ;;
   }
 
-  dimension: browser_time {
-    type: string
-    sql: ${TABLE}."browserTime" ;;
+  dimension_group: browsertime {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    convert_tz: no
+    datatype: date
+    sql: ${TABLE}."BROWSERTIME" ;;
   }
 
   dimension: channel {
     type: string
-    sql: ${TABLE}."channel" ;;
+    sql: ${TABLE}."CHANNEL" ;;
   }
 
-  dimension: qualitative_response {
+  dimension: qualitativeresponse {
     type: string
-    sql: ${TABLE}."qualitativeResponse" ;;
+    sql: ${TABLE}."QUALITATIVERESPONSE" ;;
   }
 
-  dimension: quantitative_response {
-    type: number
-    sql: ${TABLE}."quantitativeResponse" ;;
-  }
-
-  dimension: visitor_id {
+  dimension: quantitativeresponse {
     type: string
-    sql: ${TABLE}."visitorId" ;;
+    sql: ${TABLE}."QUANTITATIVERESPONSE" ;;
+  }
+
+  dimension: visitorid {
+    type: string
+    sql: ${TABLE}."VISITORID" ;;
   }
 
   dimension: promoters {
     hidden: yes
     type: number
-    sql: case when ${quantitative_response}>=9 then 1 else 0 end ;;
+    sql: case when ${quantitativeresponse}>=9 then 1 else 0 end ;;
   }
 
   dimension: detractors {
     hidden: yes
     type: number
-    sql: case when ${quantitative_response}<=6 then 1 else 0 end ;;
+    sql: case when ${quantitativeresponse}<=6 then 1 else 0 end ;;
   }
 
   dimension: passives {
     hidden: yes
     type: number
-    sql: case when ${quantitative_response} in (7,8) then 1 else 0 end ;;
+    sql: case when ${quantitativeresponse} in (7,8) then 1 else 0 end ;;
   }
 
   measure: count {
     label: "Number of Responses"
     type: count
-    drill_fields: [account_id,browser_time, quantitative_response, qualitative_response, count]
+    drill_fields: [accountid,browsertime_raw, quantitativeresponse, qualitativeresponse, count]
   }
 
   measure: total_promoters {
     label: "Number of Promoters"
     type: sum
     sql: ${promoters} ;;
-    drill_fields: [account_id,browser_time,  quantitative_response, qualitative_response]
+    drill_fields: [accountid,browsertime_raw, quantitativeresponse, qualitativeresponse]
   }
 
   measure: total_detractors {
     label: "Number of Detractors"
     type: sum
     sql: ${detractors} ;;
-    drill_fields: [account_id,browser_time,  quantitative_response, qualitative_response]
+    drill_fields: [accountid,browsertime_raw, quantitativeresponse, qualitativeresponse]
   }
 
   measure: total_passives {
     label: "Number of Passives"
     type: sum
     sql: ${passives} ;;
-    drill_fields: [account_id,browser_time,  quantitative_response, qualitative_response]
+    drill_fields: [accountid,browsertime_raw, quantitativeresponse, qualitativeresponse]
   }
 
   measure: nps_rating {
     label: "NPS Rating"
     type: sum
-    sql: ${quantitative_response} ;;
+    sql: ${quantitativeresponse} ;;
   }
 
   measure: avg_nps_rating {
     label: "Average NPS Rating"
     type: average
-    sql: ${quantitative_response} ;;
+    sql: ${quantitativeresponse} ;;
     value_format_name: decimal_1
   }
 }
