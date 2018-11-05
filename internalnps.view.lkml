@@ -62,7 +62,7 @@ view: internalnps {
   measure: count {
     label: "Number of Responses"
     type: count
-    drill_fields: [accountid,browsertime_raw, quantitativeresponse, qualitativeresponse, count]
+    drill_fields: [accountid, browsertime_raw, quantitativeresponse, qualitativeresponse, count]
   }
 
   measure: total_promoters {
