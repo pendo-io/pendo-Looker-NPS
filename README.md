@@ -237,13 +237,13 @@ If your NPS poll has been active for longer than 365 days and you want to extend
 
 Now that you have a running API call that is gathering the data you want to visualize, it's time to move on to Step 2.
 
-## Step 2 - Extract and Transform the data then load it into SNowflake using Xplenty:
+## Step 2 - Extract and Transform the data then load it into Snowflake using Xplenty:
 
 What is Xplenty?
 
 Xplenty is a leading Extract, Transform and Load (ETL) tool to help you easily move data from one data source to another.
 
-Why did we used it for this example?
+Why did we used Xplenty for this example?
 
 Xplenty is the tool Pendo uses internally to move data from a variety of sources (Pendo, Marketo, Salesforce, etc.) into a reporting data warehouse for BI purposes.  It was handy and is super simple to us.  
 
@@ -287,7 +287,33 @@ You should be presented with a message indicating the job number and which clust
 
 The job will show 100% and running, but is only complete when the status changes to 100% and complete. When you see that status, the job ran successfully and the data is now available in Snowflake.
 
-## Step 3 - Verifying the data is loaded into SNowflake:
+## Step 3 - Verifying the data is loaded into Snowflake:
 
+What is Snowflake?
 
+Snowflake is a cloud-based big data warehouse / lake solution.  
 
+Why did we used Snowflake for this example?
+
+As we discuss Pendo advanced analytics with our customer base, we hear Snowflake come up as an solution that they're using for their BI analytics data repository needs.  Pendo uses Xplenty -> BiqQuery -> Looker internally (and it all works great!), so we decided to use Snowflake to show a variation in architecture to cover an emerging trend we're seeing in our customer base.
+
+**Validate your data in Snowflake**
+Open Snowflake and navigate to the project, schema and table you just created. If all went as planned, you should see schema and table information that matches what you defined for the schema, database and columns in Xplenty.
+
+Click Preview in the lower left nav. You should see a preview of the data you loaded in the panel. Check to see if what you’re viewing is what you expected.
+
+If what you’re seeing isn’t what you expected, circle back through the steps, starting with the API call, and refine until you get the data you want.
+
+## Step 4 - Visualizing your data with this Looker Block:
+
+Pendo uses Looker as their BI Visualization tool.  
+
+As we were setting up Looker to connect to Snowflake, we discovered a couple of items that aren’t covered in [Looker’s documentation](https://docs.looker.com/setup-and-management/database-config/snowflake):
+
+- When setting up your looker_user in Snowflake, the generic instructions assume you don’t already have a data warehouse, schema and table set up.  The instructions will need edits to remove the generic portion of the user addition script.
+- When naming your tables in Xplenty, be sure to use **ALL CAPS** for table names.  Looker’s SQL calls seem to only send **ALL CAPS** to Snowflake.
+- Be sure you run grant select on all tables in schema <schema.database> to role looker_role ; for looker_user any time you change the database tables in Snowflake
+
+Also, be sure to follow **ALL** of the steps under "Adding the Connection".  There are some check boxes that need to be checked that were missed the first time around which prevented queries from executing.
+
+Now that you've connected Looker to Snowflake, do this...
