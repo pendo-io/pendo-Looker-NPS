@@ -71,8 +71,8 @@
     show_silhouette: false
     totals_color: "#808080"
     row: 22
-    col: 12
-    width: 12
+    col: 16
+    width: 8
     height: 3
   - name: NPS Average - Web App
     title: NPS Average - Web App
@@ -143,8 +143,8 @@
     show_silhouette: false
     totals_color: "#808080"
     row: 22
-    col: 0
-    width: 12
+    col: 8
+    width: 8
     height: 3
   - name: 30 Day NPS - Overall
     title: 30 Day NPS - Overall
@@ -681,3 +681,72 @@
     col: 0
     width: 24
     height: 5
+  - title: NPS Rating - Overall
+    name: NPS Rating - Overall
+    model: pendo_sandbox
+    explore: internalnps
+    type: single_value
+    fields:
+    - internalnps.avg_nps_rating
+    sorts:
+    - internalnps.avg_nps_rating desc
+    limit: 500
+    query_timezone: America/Los_Angeles
+    custom_color_enabled: false
+    custom_color: forestgreen
+    show_single_value_title: true
+    single_value_title: Average NPS Rating - Overall
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    stacking: ''
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: false
+    point_style: none
+    series_types: {}
+    limit_displayed_rows: false
+    y_axes:
+    - label: ''
+      orientation: left
+      series:
+      - id: internalnps.total_promoters
+        name: Internalnps Number of Promoters
+        axisId: internalnps.total_promoters
+      - id: internalnps.total_passives
+        name: Internalnps Number of Passives
+        axisId: internalnps.total_passives
+      - id: internalnps.total_detractors
+        name: Internalnps Number of Detractors
+        axisId: internalnps.total_detractors
+      showLabels: true
+      showValues: true
+      unpinAxis: false
+      tickDensity: default
+      type: linear
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    x_axis_label: Channel
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    plot_size_by_field: false
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
+    row: 22
+    col: 0
+    width: 8
+    height: 3
