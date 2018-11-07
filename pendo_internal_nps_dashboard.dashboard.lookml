@@ -70,7 +70,7 @@
     show_totals_labels: false
     show_silhouette: false
     totals_color: "#808080"
-    row: 17
+    row: 22
     col: 12
     width: 12
     height: 3
@@ -142,7 +142,7 @@
     show_totals_labels: false
     show_silhouette: false
     totals_color: "#808080"
-    row: 17
+    row: 22
     col: 0
     width: 12
     height: 3
@@ -185,7 +185,7 @@
     - internalnps.total_promoters
     - internalnps.total_passives
     - internalnps.total_detractors
-    row: 0
+    row: 5
     col: 12
     width: 12
     height: 3
@@ -228,7 +228,7 @@
     - internalnps.total_passives
     - internalnps.total_detractors
     series_types: {}
-    row: 0
+    row: 5
     col: 0
     width: 12
     height: 3
@@ -326,7 +326,7 @@
     - internalnps.total_passives
     - internalnps.total_promoters
     - internalnps.count
-    row: 3
+    row: 8
     col: 0
     width: 24
     height: 7
@@ -417,7 +417,7 @@
     trend_lines: []
     show_null_points: true
     interpolation: linear
-    row: 10
+    row: 15
     col: 0
     width: 24
     height: 7
@@ -498,7 +498,7 @@
     show_totals_labels: false
     show_silhouette: false
     totals_color: "#808080"
-    row: 20
+    row: 25
     col: 0
     width: 24
     height: 10
@@ -553,7 +553,7 @@
       fields:
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
-    row: 30
+    row: 35
     col: 0
     width: 8
     height: 10
@@ -608,7 +608,7 @@
       fields:
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
-    row: 30
+    row: 35
     col: 8
     width: 8
     height: 10
@@ -663,7 +663,21 @@
       fields:
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
-    row: 30
+    row: 35
     col: 16
     width: 8
     height: 10
+  - name: Pendo NPS
+    type: text
+    title_text: Pendo NPS
+    subtitle_text: Why you should care about NPS and how Pendo can help
+    body_text: |-
+      Are you new to NPS (Net Promoter Score) and want to learn more?  Start with [an overview of NPS ](https://www.pendo.io/vox/?utm_medium=cpc&utm_source=google&utm_campaign=1474681646-58843506444&utm_content=282821087494--kwd-155846096-c&utm_term=nps-p&gclid=EAIaIQobChMIoeWlh53C3gIVTj0MCh2ZhA7bEAAYASAAEgKcuPD_BwE) from Pendo.
+
+      Or, take a test drive of Pendo NPS with [this demo](https://www.pendo.io/product/nps/).
+
+      Still wanting more?  check out [Pendo's NPS eBook](http://go.pendo.io/Big-NPS-Playbook.html) or, better yet, install [Pendo Vox](https://www.pendo.io/vox/?utm_medium=cpc&utm_source=google&utm_campaign=1474681646-58843506444&utm_content=282821087494--kwd-155846096-c&utm_term=nps-p&gclid=EAIaIQobChMIoeWlh53C3gIVTj0MCh2ZhA7bEAAYASAAEgKcuPD_BwE) - a free version of Pendo's NPS solution - in your application.
+    row: 0
+    col: 0
+    width: 24
+    height: 5
