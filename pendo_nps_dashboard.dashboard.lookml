@@ -2,8 +2,8 @@
   title: Pendo NPS Dashboard
   layout: newspaper
   elements:
-  - name: NPS Average - Email
-    title: NPS Average - Email
+  - title: NPS Average - Email
+    name: NPS Average - Email
     model: pendo_NPS
     explore: nps
     type: single_value
@@ -41,17 +41,25 @@
       - id: nps.total_promoters
         name: Internalnps Number of Promoters
         axisId: nps.total_promoters
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 41
       - id: nps.total_passives
         name: Internalnps Number of Passives
         axisId: nps.total_passives
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 44
       - id: nps.total_detractors
         name: Internalnps Number of Detractors
         axisId: nps.total_detractors
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 47
       showLabels: true
       showValues: true
       unpinAxis: false
       tickDensity: default
       type: linear
+      __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+      __LINE_NUM: 38
     y_axis_combined: true
     show_y_axis_labels: true
     show_y_axis_ticks: true
@@ -70,12 +78,13 @@
     show_totals_labels: false
     show_silhouette: false
     totals_color: "#808080"
+    listen: {}
     row: 22
     col: 16
     width: 8
     height: 3
-  - name: NPS Average - Web App
-    title: NPS Average - Web App
+  - title: NPS Average - Web App
+    name: NPS Average - Web App
     model: pendo_NPS
     explore: nps
     type: single_value
@@ -113,17 +122,25 @@
       - id: nps.total_promoters
         name: Internalnps Number of Promoters
         axisId: nps.total_promoters
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 113
       - id: nps.total_passives
         name: Internalnps Number of Passives
         axisId: nps.total_passives
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 116
       - id: nps.total_detractors
         name: Internalnps Number of Detractors
         axisId: nps.total_detractors
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 119
       showLabels: true
       showValues: true
       unpinAxis: false
       tickDensity: default
       type: linear
+      __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+      __LINE_NUM: 110
     y_axis_combined: true
     show_y_axis_labels: true
     show_y_axis_ticks: true
@@ -142,12 +159,13 @@
     show_totals_labels: false
     show_silhouette: false
     totals_color: "#808080"
+    listen: {}
     row: 22
     col: 8
     width: 8
     height: 3
-  - name: 30 Day NPS - Overall
-    title: 30 Day NPS - Overall
+  - title: 30 Day NPS - Overall
+    name: 30 Day NPS - Overall
     model: pendo_NPS
     explore: nps
     type: single_value
@@ -185,6 +203,7 @@
     - nps.total_promoters
     - nps.total_passives
     - nps.total_detractors
+    listen: {}
     row: 5
     col: 12
     width: 12
@@ -228,6 +247,7 @@
     - nps.total_passives
     - nps.total_detractors
     series_types: {}
+    listen: {}
     row: 5
     col: 0
     width: 12
@@ -264,8 +284,8 @@
       _type_hint: number
     - table_calculation: overall_nps
       label: Overall NPS
-      expression: "((${nps.total_promoters:row_total} / ${nps.count:row_total})\
-        \ - (${nps.total_detractors:row_total} / ${nps.count:row_total}))*100"
+      expression: "((${nps.total_promoters:row_total} / ${nps.count:row_total}) -\
+        \ (${nps.total_detractors:row_total} / ${nps.count:row_total}))*100"
       value_format:
       value_format_name: decimal_0
       _kind_hint: supermeasure
@@ -292,12 +312,18 @@
       - id: Email - nps
         name: Email - NPS
         axisId: nps
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 292
       - id: Web App - nps
         name: Web App - NPS
         axisId: nps
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 295
       - id: overall_nps
         name: Overall NPS
         axisId: overall_nps
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 298
       showLabels: true
       showValues: true
       maxValue:
@@ -306,6 +332,8 @@
       tickDensity: custom
       tickDensityCustom: 5
       type: linear
+      __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+      __LINE_NUM: 289
     y_axis_combined: true
     show_y_axis_labels: true
     show_y_axis_ticks: true
@@ -326,6 +354,7 @@
     - nps.total_passives
     - nps.total_promoters
     - nps.count
+    listen: {}
     row: 8
     col: 0
     width: 24
@@ -387,12 +416,18 @@
       - id: nps.total_detractors
         name: Detractors
         axisId: nps.total_detractors
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 387
       - id: nps.total_passives
         name: Passives
         axisId: nps.total_passives
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 390
       - id: nps.total_promoters
         name: Promoters
         axisId: nps.total_promoters
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 393
       showLabels: true
       showValues: true
       maxValue:
@@ -401,6 +436,8 @@
       tickDensity: default
       tickDensityCustom: 14
       type: linear
+      __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+      __LINE_NUM: 384
     y_axis_combined: true
     show_y_axis_labels: true
     show_y_axis_ticks: true
@@ -417,6 +454,7 @@
     trend_lines: []
     show_null_points: true
     interpolation: linear
+    listen: {}
     row: 15
     col: 0
     width: 24
@@ -466,12 +504,17 @@
         - "#F36254"
         - "#FCF758"
         - "#4FBC89"
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 464
       bold: false
       italic: false
       strikethrough: false
       fields:
+      __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+      __LINE_NUM: 459
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
+    listen: {}
     row: 35
     col: 0
     width: 8
@@ -521,12 +564,17 @@
         - "#F36254"
         - "#FCF758"
         - "#4FBC89"
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 519
       bold: false
       italic: false
       strikethrough: false
       fields:
+      __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+      __LINE_NUM: 514
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
+    listen: {}
     row: 35
     col: 16
     width: 8
@@ -581,17 +629,25 @@
       - id: nps.total_promoters
         name: Internalnps Number of Promoters
         axisId: nps.total_promoters
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 581
       - id: nps.total_passives
         name: Internalnps Number of Passives
         axisId: nps.total_passives
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 584
       - id: nps.total_detractors
         name: Internalnps Number of Detractors
         axisId: nps.total_detractors
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 587
       showLabels: true
       showValues: true
       unpinAxis: false
       tickDensity: default
       type: linear
+      __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+      __LINE_NUM: 578
     y_axis_combined: true
     show_y_axis_labels: true
     show_y_axis_ticks: true
@@ -610,6 +666,7 @@
     show_totals_labels: false
     show_silhouette: false
     totals_color: "#808080"
+    listen: {}
     row: 22
     col: 0
     width: 8
@@ -659,10 +716,14 @@
         - "#F36254"
         - "#FCF758"
         - "#4FBC89"
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 657
       bold: false
       italic: false
       strikethrough: false
       fields:
+      __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+      __LINE_NUM: 652
     conditional_formatting_include_totals: false
     conditional_formatting_include_nulls: false
     listen: {}
@@ -670,8 +731,8 @@
     col: 8
     width: 8
     height: 10
-  - title: NPS Promoters-Passive-Detractors by Channel
-    name: NPS Promoters-Passive-Detractors by Channel
+  - title: NPS Promoters-Passive-Detractors - Email
+    name: NPS Promoters-Passive-Detractors - Email
     model: pendo_NPS
     explore: nps
     type: looker_column
@@ -680,14 +741,12 @@
     - nps.total_passives
     - nps.total_detractors
     - nps.channel
-    pivots:
-    - nps.channel
+    filters:
+      nps.channel: Email
     sorts:
-    - nps.total_promoters desc 0
-    - nps.channel
+    - nps.total_promoters desc
     limit: 500
     row_total: left
-    query_timezone: America/Los_Angeles
     stacking: ''
     colors:
     - "#5245ed"
@@ -711,9 +770,9 @@
     show_view_names: false
     point_style: none
     series_colors:
-      nps.total_promoters: "#49cec1"
-      nps.total_passives: "#e9b404"
-      nps.total_detractors: "#ed6168"
+      nps.total_promoters: "#74bab3"
+      nps.total_passives: "#ede05f"
+      nps.total_detractors: "#edb7bf"
       Email - nps.total_promoters: "#777777"
       Web App - nps.total_promoters: "#292929"
       Row Total - nps.total_promoters: "#74bab3"
@@ -733,6 +792,9 @@
       Email - nps.total_detractors: Email - Detractors
       Web App - nps.total_detractors: Web App - Detractors
       Row Total - nps.total_detractors: Overall - Detractors
+      nps.total_promoters: Promoters
+      nps.total_passives: Passive
+      nps.total_detractors: Detractors
     series_types: {}
     limit_displayed_rows: false
     limit_displayed_rows_values:
@@ -746,42 +808,62 @@
       - id: Email - nps.total_promoters
         name: Email - Promoters
         axisId: nps.total_promoters
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 746
       - id: Email - nps.total_passives
         name: Email - Passives
         axisId: nps.total_passives
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 749
       - id: Email - nps.total_detractors
         name: Email - Internalnps Number of Detractors
         axisId: nps.total_detractors
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 752
       - id: Web App - nps.total_promoters
         name: Web App - Promoters
         axisId: nps.total_promoters
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 755
       - id: Web App - nps.total_passives
         name: Wen App - Passives
         axisId: nps.total_passives
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 758
       - id: Web App - nps.total_detractors
         name: Web App - Internalnps Number of Detractors
         axisId: nps.total_detractors
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 761
       - id: Row Total - nps.total_promoters
         name: Overall - Promoters
         axisId: nps.total_promoters
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 764
       - id: Row Total - nps.total_passives
         name: Overall - Passives
         axisId: nps.total_passives
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 767
       - id: Row Total - nps.total_detractors
         name: Row Total - Internalnps Number of Detractors
         axisId: nps.total_detractors
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 770
       showLabels: false
       showValues: true
       unpinAxis: false
       tickDensity: default
       type: linear
+      __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+      __LINE_NUM: 743
     y_axis_combined: true
     show_y_axis_labels: true
     show_y_axis_ticks: true
     y_axis_tick_density: default
     y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    x_axis_label: Channel
+    show_x_axis_label: false
+    x_axis_label: ''
     show_x_axis_ticks: true
     x_axis_scale: auto
     y_axis_scale_mode: linear
@@ -794,8 +876,308 @@
     show_totals_labels: false
     show_silhouette: false
     totals_color: "#808080"
+    query_timezone: America/Los_Angeles
+    listen: {}
+    row: 25
+    col: 16
+    width: 8
+    height: 10
+  - title: NPS Promoters-Passive-Detractors - Web App
+    name: NPS Promoters-Passive-Detractors - Web App
+    model: pendo_NPS
+    explore: nps
+    type: looker_column
+    fields:
+    - nps.total_promoters
+    - nps.total_passives
+    - nps.total_detractors
+    - nps.channel
+    filters:
+      nps.channel: Web App
+    sorts:
+    - nps.total_promoters desc
+    limit: 500
+    row_total: left
+    stacking: ''
+    colors:
+    - "#5245ed"
+    - "#ed6168"
+    - "#1ea8df"
+    - "#353b49"
+    - "#49cec1"
+    - "#b3a0dd"
+    - "#db7f2a"
+    - "#706080"
+    - "#a2dcf3"
+    - "#776fdf"
+    - "#e9b404"
+    - "#635189"
+    show_value_labels: true
+    label_density: 25
+    legend_position: center
+    hide_legend: false
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: false
+    point_style: none
+    series_colors:
+      nps.total_promoters: "#74bab3"
+      nps.total_passives: "#ede05f"
+      nps.total_detractors: "#edb7bf"
+      Email - nps.total_promoters: "#777777"
+      Web App - nps.total_promoters: "#292929"
+      Row Total - nps.total_promoters: "#74bab3"
+      Email - nps.total_passives: "#a3a3a3"
+      Web App - nps.total_passives: "#8d8d8d"
+      Row Total - nps.total_passives: "#ede05f"
+      Email - nps.total_detractors: "#d0d0d0"
+      Web App - nps.total_detractors: "#e7e7e7"
+      Row Total - nps.total_detractors: "#edb7bf"
+    series_labels:
+      Email - nps.total_promoters: Email - Promoters
+      Web App - nps.total_promoters: Web App - Promoters
+      Row Total - nps.total_promoters: Overall - Promoters
+      Email - nps.total_passives: Email - Passives
+      Web App - nps.total_passives: Web App - Passives
+      Row Total - nps.total_passives: Overall - Passives
+      Email - nps.total_detractors: Email - Detractors
+      Web App - nps.total_detractors: Web App - Detractors
+      Row Total - nps.total_detractors: Overall - Detractors
+      nps.total_promoters: Promoters
+      nps.total_passives: Passive
+      nps.total_detractors: Detractors
+    series_types: {}
+    limit_displayed_rows: false
+    limit_displayed_rows_values:
+      show_hide: hide
+      first_last: first
+      num_rows: 0
+    y_axes:
+    - label: ''
+      orientation: left
+      series:
+      - id: Email - nps.total_promoters
+        name: Email - Promoters
+        axisId: nps.total_promoters
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 746
+      - id: Email - nps.total_passives
+        name: Email - Passives
+        axisId: nps.total_passives
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 749
+      - id: Email - nps.total_detractors
+        name: Email - Internalnps Number of Detractors
+        axisId: nps.total_detractors
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 752
+      - id: Web App - nps.total_promoters
+        name: Web App - Promoters
+        axisId: nps.total_promoters
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 755
+      - id: Web App - nps.total_passives
+        name: Wen App - Passives
+        axisId: nps.total_passives
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 758
+      - id: Web App - nps.total_detractors
+        name: Web App - Internalnps Number of Detractors
+        axisId: nps.total_detractors
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 761
+      - id: Row Total - nps.total_promoters
+        name: Overall - Promoters
+        axisId: nps.total_promoters
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 764
+      - id: Row Total - nps.total_passives
+        name: Overall - Passives
+        axisId: nps.total_passives
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 767
+      - id: Row Total - nps.total_detractors
+        name: Row Total - Internalnps Number of Detractors
+        axisId: nps.total_detractors
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 770
+      showLabels: false
+      showValues: true
+      unpinAxis: false
+      tickDensity: default
+      type: linear
+      __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+      __LINE_NUM: 743
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: false
+    x_axis_label: ''
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    plot_size_by_field: false
+    ordering: none
+    show_null_labels: false
+    column_spacing_ratio: 0.2
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
+    query_timezone: America/Los_Angeles
+    listen: {}
+    row: 25
+    col: 8
+    width: 8
+    height: 10
+  - title: NPS Promoters-Passive-Detractors - Overall
+    name: NPS Promoters-Passive-Detractors - Overall
+    model: pendo_NPS
+    explore: nps
+    type: looker_column
+    fields:
+    - nps.total_promoters
+    - nps.total_passives
+    - nps.total_detractors
+    sorts:
+    - nps.total_promoters desc
+    limit: 500
+    row_total: left
+    stacking: ''
+    colors:
+    - "#5245ed"
+    - "#ed6168"
+    - "#1ea8df"
+    - "#353b49"
+    - "#49cec1"
+    - "#b3a0dd"
+    - "#db7f2a"
+    - "#706080"
+    - "#a2dcf3"
+    - "#776fdf"
+    - "#e9b404"
+    - "#635189"
+    show_value_labels: true
+    label_density: 25
+    legend_position: center
+    hide_legend: false
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: false
+    point_style: none
+    series_colors:
+      nps.total_promoters: "#74bab3"
+      nps.total_passives: "#ede05f"
+      nps.total_detractors: "#edb7bf"
+      Email - nps.total_promoters: "#777777"
+      Web App - nps.total_promoters: "#292929"
+      Row Total - nps.total_promoters: "#74bab3"
+      Email - nps.total_passives: "#a3a3a3"
+      Web App - nps.total_passives: "#8d8d8d"
+      Row Total - nps.total_passives: "#ede05f"
+      Email - nps.total_detractors: "#d0d0d0"
+      Web App - nps.total_detractors: "#e7e7e7"
+      Row Total - nps.total_detractors: "#edb7bf"
+    series_labels:
+      Email - nps.total_promoters: Email - Promoters
+      Web App - nps.total_promoters: Web App - Promoters
+      Row Total - nps.total_promoters: Overall - Promoters
+      Email - nps.total_passives: Email - Passives
+      Web App - nps.total_passives: Web App - Passives
+      Row Total - nps.total_passives: Overall - Passives
+      Email - nps.total_detractors: Email - Detractors
+      Web App - nps.total_detractors: Web App - Detractors
+      Row Total - nps.total_detractors: Overall - Detractors
+      nps.total_promoters: Promoters
+      nps.total_passives: Passive
+      nps.total_detractors: Detractors
+    series_types: {}
+    limit_displayed_rows: false
+    limit_displayed_rows_values:
+      show_hide: hide
+      first_last: first
+      num_rows: 0
+    y_axes:
+    - label: ''
+      orientation: left
+      series:
+      - id: Email - nps.total_promoters
+        name: Email - Promoters
+        axisId: nps.total_promoters
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 746
+      - id: Email - nps.total_passives
+        name: Email - Passives
+        axisId: nps.total_passives
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 749
+      - id: Email - nps.total_detractors
+        name: Email - Internalnps Number of Detractors
+        axisId: nps.total_detractors
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 752
+      - id: Web App - nps.total_promoters
+        name: Web App - Promoters
+        axisId: nps.total_promoters
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 755
+      - id: Web App - nps.total_passives
+        name: Wen App - Passives
+        axisId: nps.total_passives
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 758
+      - id: Web App - nps.total_detractors
+        name: Web App - Internalnps Number of Detractors
+        axisId: nps.total_detractors
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 761
+      - id: Row Total - nps.total_promoters
+        name: Overall - Promoters
+        axisId: nps.total_promoters
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 764
+      - id: Row Total - nps.total_passives
+        name: Overall - Passives
+        axisId: nps.total_passives
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 767
+      - id: Row Total - nps.total_detractors
+        name: Row Total - Internalnps Number of Detractors
+        axisId: nps.total_detractors
+        __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+        __LINE_NUM: 770
+      showLabels: false
+      showValues: true
+      unpinAxis: false
+      tickDensity: default
+      type: linear
+      __FILE: pendo_NPS/pendo_nps_dashboard.dashboard.lookml
+      __LINE_NUM: 743
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    x_axis_label: Overall
+    show_x_axis_ticks: true
+    x_axis_scale: auto
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    plot_size_by_field: false
+    ordering: none
+    show_null_labels: false
+    column_spacing_ratio: 0.2
+    show_totals_labels: false
+    show_silhouette: false
+    totals_color: "#808080"
+    query_timezone: America/Los_Angeles
     listen: {}
     row: 25
     col: 0
-    width: 24
+    width: 8
     height: 10
