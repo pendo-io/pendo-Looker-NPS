@@ -1,3 +1,8 @@
+# Description
+[Pendo’s](http://pendo.io/) NPS is a simple and elegant measure of customer advocacy but it doesn’t tell you how the product experience impacts customer sentiment. Pendo brings together NPS scores with actual product usage data to show you which features are used most heavily by NPS promoters and detractors as well as variances across user segments. With this data you can identify areas of the product that need improvement, and guide detractors to the highest value features.
+
+This Pendo NPS Block allows you to go even deeper into your NPS data to gain additional insights by varying things like time period visualized, slice and dice between channel (in-app of email), as well as view response rates, ratings by type (promoter, passive, detractor).
+
 # Pendo NPS - Visualized with Looker
 
 The Block was built using representative components to pull data from Pendo (Xplenty and the Pendo public API), transform it as necessary (ex. convert dates from epoch to human-readable, apply a hash to PII data like visitorId), load it into a data warehouse / repository (in this case, Snowflake), and visualize it via Looker.
@@ -269,6 +274,16 @@ With this API built in Xplenty, you can configure transformations and destinatio
 
 Xplenty makes transformations simple, although the syntax can be a little counterintuitive at first. [Review their documentation](http://community.xplenty.com/knowledgebase/articles/173787-xplenty-functions) to familiarize yourself with the available functions. Notably, we used the date transformation function to convert epoch time to a human-readable date before loading it into Snowflake.  In addition, the SHA256 hash function is a perfect way to protect PII data.
 
+For this Block, we created the following in Snowflake:
+- Warehouse = COMPUTE_WH
+- Schema = PENDO
+- Database = PENDO
+- Table = NPS
+
+We used Xplenty to transform browserTime to a Date using the Xplenty Expression Builder.  Be sure to create the NPS table with browserTime being set to DATE format.
+
+All other column/data values can be left as-is.  
+
 Now that your data is flowing into Xplenty and Transformed to your specifications, our example continues using Snowflake as a target destination.
 
 Xplenty must first be allowed access to your Snowflake data warehouse and a selcted schema/database combination [as described in their documentation](http://community.xplenty.com/knowledgebase/articles/1827793-allowing-xplenty-access-to-my-snowflake-account).
@@ -316,4 +331,20 @@ As we were setting up Looker to connect to Snowflake, we discovered a couple of 
 
 Also, be sure to follow **ALL** of the steps under "Adding the Connection".  There are some check boxes that need to be checked that were missed the first time around which prevented queries from executing.
 
-Now that you've connected Looker to Snowflake, do this...
+For this example, we used the following values for the Looker connection to Snowflake:
+- Connection name = pendosnowflake
+- Data group name = pendo_sandbox_default_datagroup
+
+Now that you've connected Looker to Snowflake, it's time to implement this Block in your Looker environment.
+
+If you don’t have a Github account, you should start by creating one so you can access and download the code for the Block. 
+
+After you create your Github account, you can now download the entire Pendo NPS Block from this Github repo directly into your Looker application by following the directions outlined [here](https://docs.looker.com/data-modeling/getting-started/manage-projects#cloning_a_public_git_repository).
+
+Assuming you followed the above steps to the letter, your Pendo NPS Model, View, and Dashboard should be ready to explore.  Congratulations!
+ 
+Some things to check if the Block doesn't run right away:
+- Navigate to the Pendo_NPS Model - update your connection in the model object if you used anything other than `pendosnowflake` as the connection name.
+- While still in the Pendo_NPS Model - update your datagroup in the model object if you used anything other than `pendo_sandbox_default_datagroup` as the datagroup name.
+
+If you need additional help, please contact help@pendo.io for assistance.
