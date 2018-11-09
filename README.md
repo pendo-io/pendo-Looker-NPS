@@ -275,10 +275,10 @@ With this API built in Xplenty, you can configure transformations and destinatio
 Xplenty makes transformations simple, although the syntax can be a little counterintuitive at first. [Review their documentation](http://community.xplenty.com/knowledgebase/articles/173787-xplenty-functions) to familiarize yourself with the available functions. Notably, we used the date transformation function to convert epoch time to a human-readable date before loading it into Snowflake.  In addition, the SHA256 hash function is a perfect way to protect PII data.
 
 For this Block, we created the following in Snowflake:
-- Warehouse = COMPUTE_WH
-- Schema = PENDO
-- Database = PENDO
-- Table = NPS
+- Warehouse = `COMPUTE_WH`
+- Schema = `PENDO`
+- Database = `PENDO`
+- Table = `NPS`
 
 We used Xplenty to transform browserTime to a Date using the Xplenty Expression Builder.  Be sure to create the NPS table with browserTime being set to DATE format.
 
@@ -332,8 +332,8 @@ As we were setting up Looker to connect to Snowflake, we discovered a couple of 
 Also, be sure to follow **ALL** of the steps under "Adding the Connection".  There are some check boxes that need to be checked that were missed the first time around which prevented queries from executing.
 
 For this example, we used the following values for the Looker connection to Snowflake:
-- Connection name = pendosnowflake
-- Data group name = pendo_sandbox_default_datagroup
+- Connection name = `pendosnowflake`
+- Data group name = `pendo_sandbox_default_datagroup`
 
 Now that you've connected Looker to Snowflake, it's time to implement this Block in your Looker environment.
 
