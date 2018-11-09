@@ -5,15 +5,15 @@
   - name: NPS Average - Email
     title: NPS Average - Email
     model: pendo_NPS
-    explore: internalnps
+    explore: nps
     type: single_value
     fields:
-    - internalnps.channel
-    - internalnps.avg_nps_rating
+    - nps.channel
+    - nps.avg_nps_rating
     filters:
-      internalnps.channel: Email
+      nps.channel: Email
     sorts:
-    - internalnps.avg_nps_rating desc
+    - nps.avg_nps_rating desc
     limit: 500
     query_timezone: America/Los_Angeles
     custom_color_enabled: false
@@ -38,15 +38,15 @@
     - label: ''
       orientation: left
       series:
-      - id: internalnps.total_promoters
+      - id: nps.total_promoters
         name: Internalnps Number of Promoters
-        axisId: internalnps.total_promoters
-      - id: internalnps.total_passives
+        axisId: nps.total_promoters
+      - id: nps.total_passives
         name: Internalnps Number of Passives
-        axisId: internalnps.total_passives
-      - id: internalnps.total_detractors
+        axisId: nps.total_passives
+      - id: nps.total_detractors
         name: Internalnps Number of Detractors
-        axisId: internalnps.total_detractors
+        axisId: nps.total_detractors
       showLabels: true
       showValues: true
       unpinAxis: false
@@ -77,15 +77,15 @@
   - name: NPS Average - Web App
     title: NPS Average - Web App
     model: pendo_NPS
-    explore: internalnps
+    explore: nps
     type: single_value
     fields:
-    - internalnps.channel
-    - internalnps.avg_nps_rating
+    - nps.channel
+    - nps.avg_nps_rating
     filters:
-      internalnps.channel: Web App
+      nps.channel: Web App
     sorts:
-    - internalnps.avg_nps_rating desc
+    - nps.avg_nps_rating desc
     limit: 500
     query_timezone: America/Los_Angeles
     custom_color_enabled: false
@@ -110,15 +110,15 @@
     - label: ''
       orientation: left
       series:
-      - id: internalnps.total_promoters
+      - id: nps.total_promoters
         name: Internalnps Number of Promoters
-        axisId: internalnps.total_promoters
-      - id: internalnps.total_passives
+        axisId: nps.total_promoters
+      - id: nps.total_passives
         name: Internalnps Number of Passives
-        axisId: internalnps.total_passives
-      - id: internalnps.total_detractors
+        axisId: nps.total_passives
+      - id: nps.total_detractors
         name: Internalnps Number of Detractors
-        axisId: internalnps.total_detractors
+        axisId: nps.total_detractors
       showLabels: true
       showValues: true
       unpinAxis: false
@@ -149,23 +149,23 @@
   - name: 30 Day NPS - Overall
     title: 30 Day NPS - Overall
     model: pendo_NPS
-    explore: internalnps
+    explore: nps
     type: single_value
     fields:
-    - internalnps.total_detractors
-    - internalnps.total_passives
-    - internalnps.total_promoters
-    - internalnps.count
+    - nps.total_detractors
+    - nps.total_passives
+    - nps.total_promoters
+    - nps.count
     filters:
-      internalnps.browsertime_date: 30 days
+      nps.browsertime_date: 30 days
     sorts:
-    - internalnps.count desc
+    - nps.count desc
     limit: 500
     dynamic_fields:
     - table_calculation: calculation_1
       label: Calculation 1
-      expression: "((${internalnps.total_promoters} / ${internalnps.count} - (${internalnps.total_detractors}\
-        \ / ${internalnps.count}))*100)"
+      expression: "((${nps.total_promoters} / ${nps.count} - (${nps.total_detractors}\
+        \ / ${nps.count}))*100)"
       value_format:
       value_format_name:
       _kind_hint: measure
@@ -181,10 +181,10 @@
     show_comparison_label: true
     series_types: {}
     hidden_fields:
-    - internalnps.count
-    - internalnps.total_promoters
-    - internalnps.total_passives
-    - internalnps.total_detractors
+    - nps.count
+    - nps.total_promoters
+    - nps.total_passives
+    - nps.total_detractors
     row: 5
     col: 12
     width: 12
@@ -192,23 +192,23 @@
   - title: 90 Day NPS - Overall
     name: 90 Day NPS - Overall
     model: pendo_NPS
-    explore: internalnps
+    explore: nps
     type: single_value
     fields:
-    - internalnps.total_detractors
-    - internalnps.total_passives
-    - internalnps.total_promoters
-    - internalnps.count
+    - nps.total_detractors
+    - nps.total_passives
+    - nps.total_promoters
+    - nps.count
     filters:
-      internalnps.browsertime_date: 90 days
+      nps.browsertime_date: 90 days
     sorts:
     - calculation_1 desc
     limit: 500
     dynamic_fields:
     - table_calculation: calculation_1
       label: Calculation 1
-      expression: "((${internalnps.total_promoters} / ${internalnps.count} - (${internalnps.total_detractors}\
-        \ / ${internalnps.count}))*100)"
+      expression: "((${nps.total_promoters} / ${nps.count} - (${nps.total_detractors}\
+        \ / ${nps.count}))*100)"
       value_format:
       value_format_name: decimal_0
       _kind_hint: measure
@@ -223,10 +223,10 @@
     comparison_reverse_colors: false
     show_comparison_label: true
     hidden_fields:
-    - internalnps.count
-    - internalnps.total_promoters
-    - internalnps.total_passives
-    - internalnps.total_detractors
+    - nps.count
+    - nps.total_promoters
+    - nps.total_passives
+    - nps.total_detractors
     series_types: {}
     row: 5
     col: 0
@@ -235,37 +235,37 @@
   - title: 1 Year NPS Trend - Overall and by Channel
     name: 1 Year NPS Trend - Overall and by Channel
     model: pendo_NPS
-    explore: internalnps
+    explore: nps
     type: looker_line
     fields:
-    - internalnps.browsertime_month
-    - internalnps.total_detractors
-    - internalnps.total_passives
-    - internalnps.total_promoters
-    - internalnps.count
-    - internalnps.channel
+    - nps.browsertime_month
+    - nps.total_detractors
+    - nps.total_passives
+    - nps.total_promoters
+    - nps.count
+    - nps.channel
     pivots:
-    - internalnps.channel
+    - nps.channel
     fill_fields:
-    - internalnps.browsertime_month
+    - nps.browsertime_month
     sorts:
-    - internalnps.channel 0
+    - nps.channel 0
     - overall_nps
     limit: 500
     row_total: right
     dynamic_fields:
     - table_calculation: nps
       label: NPS
-      expression: "((${internalnps.total_promoters} / ${internalnps.count} - (${internalnps.total_detractors}\
-        \ / ${internalnps.count}))*100)"
+      expression: "((${nps.total_promoters} / ${nps.count} - (${nps.total_detractors}\
+        \ / ${nps.count}))*100)"
       value_format:
       value_format_name: decimal_0
       _kind_hint: measure
       _type_hint: number
     - table_calculation: overall_nps
       label: Overall NPS
-      expression: "((${internalnps.total_promoters:row_total} / ${internalnps.count:row_total})\
-        \ - (${internalnps.total_detractors:row_total} / ${internalnps.count:row_total}))*100"
+      expression: "((${nps.total_promoters:row_total} / ${nps.count:row_total})\
+        \ - (${nps.total_detractors:row_total} / ${nps.count:row_total}))*100"
       value_format:
       value_format_name: decimal_0
       _kind_hint: supermeasure
@@ -322,10 +322,10 @@
     show_null_points: false
     interpolation: linear
     hidden_fields:
-    - internalnps.total_detractors
-    - internalnps.total_passives
-    - internalnps.total_promoters
-    - internalnps.count
+    - nps.total_detractors
+    - nps.total_passives
+    - nps.total_promoters
+    - nps.count
     row: 8
     col: 0
     width: 24
@@ -333,17 +333,17 @@
   - title: Number of NPS Responses Overall
     name: Number of NPS Responses Overall
     model: pendo_NPS
-    explore: internalnps
+    explore: nps
     type: looker_line
     fields:
-    - internalnps.browsertime_month
-    - internalnps.total_detractors
-    - internalnps.total_passives
-    - internalnps.total_promoters
+    - nps.browsertime_month
+    - nps.total_detractors
+    - nps.total_passives
+    - nps.total_promoters
     fill_fields:
-    - internalnps.browsertime_month
+    - nps.browsertime_month
     sorts:
-    - internalnps.browsertime_month desc
+    - nps.browsertime_month desc
     limit: 500
     query_timezone: America/Los_Angeles
     stacking: ''
@@ -368,31 +368,31 @@
     show_view_names: false
     point_style: none
     series_colors:
-      internalnps.total_detractors: "#ed6168"
-      internalnps.total_passives: "#e9b404"
-      internalnps.total_promoters: "#49cec1"
+      nps.total_detractors: "#ed6168"
+      nps.total_passives: "#e9b404"
+      nps.total_promoters: "#49cec1"
     series_labels:
-      internalnps.total_detractors: Detractors
-      internalnps.total_passives: Passives
-      internalnps.total_promoters: Promoters
+      nps.total_detractors: Detractors
+      nps.total_passives: Passives
+      nps.total_promoters: Promoters
     series_types: {}
     series_point_styles:
-      internalnps.total_detractors: square
-      internalnps.total_promoters: diamond
+      nps.total_detractors: square
+      nps.total_promoters: diamond
     limit_displayed_rows: false
     y_axes:
     - label: ''
       orientation: left
       series:
-      - id: internalnps.total_detractors
+      - id: nps.total_detractors
         name: Detractors
-        axisId: internalnps.total_detractors
-      - id: internalnps.total_passives
+        axisId: nps.total_detractors
+      - id: nps.total_passives
         name: Passives
-        axisId: internalnps.total_passives
-      - id: internalnps.total_promoters
+        axisId: nps.total_passives
+      - id: nps.total_promoters
         name: Promoters
-        axisId: internalnps.total_promoters
+        axisId: nps.total_promoters
       showLabels: true
       showValues: true
       maxValue:
@@ -424,18 +424,18 @@
   - title: NPS Promoters - Last 10 with Comments
     name: NPS Promoters - Last 10 with Comments
     model: pendo_NPS
-    explore: internalnps
+    explore: nps
     type: table
     fields:
-    - internalnps.browsertime_date
-    - internalnps.accountid
-    - internalnps.qualitativeresponse
-    - internalnps.nps_rating
+    - nps.browsertime_date
+    - nps.accountid
+    - nps.qualitativeresponse
+    - nps.nps_rating
     filters:
-      internalnps.nps_rating: ">9"
-      internalnps.qualitativeresponse: "-NULL"
+      nps.nps_rating: ">9"
+      nps.qualitativeresponse: "-NULL"
     sorts:
-    - internalnps.browsertime_date desc
+    - nps.browsertime_date desc
     limit: 10
     column_limit: 50
     query_timezone: America/Los_Angeles
@@ -446,12 +446,12 @@
     hide_totals: false
     hide_row_totals: false
     series_labels:
-      internalnps.browser_time: Date
-      internalnps.qualitative_response: Response
-      internalnps.browsertime_date: Date
-      internalnps.accountid: Account
-      internalnps.qualitativeresponse: Response
-      internalnps.nps_rating: NPS Rating
+      nps.browser_time: Date
+      nps.qualitative_response: Response
+      nps.browsertime_date: Date
+      nps.accountid: Account
+      nps.qualitativeresponse: Response
+      nps.nps_rating: NPS Rating
     table_theme: editable
     limit_displayed_rows: false
     enable_conditional_formatting: true
@@ -479,18 +479,18 @@
   - title: NPS Detractors - Last 10 with Comments
     name: NPS Detractors - Last 10 with Comments
     model: pendo_NPS
-    explore: internalnps
+    explore: nps
     type: table
     fields:
-    - internalnps.browsertime_date
-    - internalnps.accountid
-    - internalnps.qualitativeresponse
-    - internalnps.nps_rating
+    - nps.browsertime_date
+    - nps.accountid
+    - nps.qualitativeresponse
+    - nps.nps_rating
     filters:
-      internalnps.nps_rating: "<7"
-      internalnps.qualitativeresponse: "-NULL"
+      nps.nps_rating: "<7"
+      nps.qualitativeresponse: "-NULL"
     sorts:
-    - internalnps.browsertime_date desc
+    - nps.browsertime_date desc
     limit: 10
     column_limit: 50
     query_timezone: America/Los_Angeles
@@ -501,12 +501,12 @@
     hide_totals: false
     hide_row_totals: false
     series_labels:
-      internalnps.browser_time: Date
-      internalnps.qualitative_response: Response
-      internalnps.browsertime_date: Date
-      internalnps.accountid: Account
-      internalnps.qualitativeresponse: Response
-      internalnps.nps_rating: NPS Rating
+      nps.browser_time: Date
+      nps.qualitative_response: Response
+      nps.browsertime_date: Date
+      nps.accountid: Account
+      nps.qualitativeresponse: Response
+      nps.nps_rating: NPS Rating
     table_theme: editable
     limit_displayed_rows: false
     enable_conditional_formatting: true
@@ -548,12 +548,12 @@
   - title: NPS Rating - Overall
     name: NPS Rating - Overall
     model: pendo_NPS
-    explore: internalnps
+    explore: nps
     type: single_value
     fields:
-    - internalnps.avg_nps_rating
+    - nps.avg_nps_rating
     sorts:
-    - internalnps.avg_nps_rating desc
+    - nps.avg_nps_rating desc
     limit: 500
     query_timezone: America/Los_Angeles
     custom_color_enabled: false
@@ -578,15 +578,15 @@
     - label: ''
       orientation: left
       series:
-      - id: internalnps.total_promoters
+      - id: nps.total_promoters
         name: Internalnps Number of Promoters
-        axisId: internalnps.total_promoters
-      - id: internalnps.total_passives
+        axisId: nps.total_promoters
+      - id: nps.total_passives
         name: Internalnps Number of Passives
-        axisId: internalnps.total_passives
-      - id: internalnps.total_detractors
+        axisId: nps.total_passives
+      - id: nps.total_detractors
         name: Internalnps Number of Detractors
-        axisId: internalnps.total_detractors
+        axisId: nps.total_detractors
       showLabels: true
       showValues: true
       unpinAxis: false
@@ -617,18 +617,18 @@
   - title: NPS Passive - Last 10 with Comments
     name: NPS Passive - Last 10 with Comments
     model: pendo_NPS
-    explore: internalnps
+    explore: nps
     type: table
     fields:
-    - internalnps.browsertime_date
-    - internalnps.accountid
-    - internalnps.qualitativeresponse
-    - internalnps.nps_rating
+    - nps.browsertime_date
+    - nps.accountid
+    - nps.qualitativeresponse
+    - nps.nps_rating
     filters:
-      internalnps.qualitativeresponse: "-NULL"
-      internalnps.nps_rating: '7,8'
+      nps.qualitativeresponse: "-NULL"
+      nps.nps_rating: '7,8'
     sorts:
-    - internalnps.browsertime_date desc
+    - nps.browsertime_date desc
     limit: 10
     column_limit: 50
     query_timezone: America/Los_Angeles
@@ -639,12 +639,12 @@
     hide_totals: false
     hide_row_totals: false
     series_labels:
-      internalnps.browser_time: Date
-      internalnps.qualitative_response: Response
-      internalnps.browsertime_date: Date
-      internalnps.accountid: Account
-      internalnps.qualitativeresponse: Response
-      internalnps.nps_rating: NPS Rating
+      nps.browser_time: Date
+      nps.qualitative_response: Response
+      nps.browsertime_date: Date
+      nps.accountid: Account
+      nps.qualitativeresponse: Response
+      nps.nps_rating: NPS Rating
     table_theme: editable
     limit_displayed_rows: false
     enable_conditional_formatting: true
@@ -673,18 +673,18 @@
   - title: NPS Promoters-Passive-Detractors by Channel
     name: NPS Promoters-Passive-Detractors by Channel
     model: pendo_NPS
-    explore: internalnps
+    explore: nps
     type: looker_column
     fields:
-    - internalnps.total_promoters
-    - internalnps.total_passives
-    - internalnps.total_detractors
-    - internalnps.channel
+    - nps.total_promoters
+    - nps.total_passives
+    - nps.total_detractors
+    - nps.channel
     pivots:
-    - internalnps.channel
+    - nps.channel
     sorts:
-    - internalnps.total_promoters desc 0
-    - internalnps.channel
+    - nps.total_promoters desc 0
+    - nps.channel
     limit: 500
     row_total: left
     query_timezone: America/Los_Angeles
@@ -711,28 +711,28 @@
     show_view_names: false
     point_style: none
     series_colors:
-      internalnps.total_promoters: "#49cec1"
-      internalnps.total_passives: "#e9b404"
-      internalnps.total_detractors: "#ed6168"
-      Email - internalnps.total_promoters: "#777777"
-      Web App - internalnps.total_promoters: "#292929"
-      Row Total - internalnps.total_promoters: "#74bab3"
-      Email - internalnps.total_passives: "#a3a3a3"
-      Web App - internalnps.total_passives: "#8d8d8d"
-      Row Total - internalnps.total_passives: "#ede05f"
-      Email - internalnps.total_detractors: "#d0d0d0"
-      Web App - internalnps.total_detractors: "#e7e7e7"
-      Row Total - internalnps.total_detractors: "#edb7bf"
+      nps.total_promoters: "#49cec1"
+      nps.total_passives: "#e9b404"
+      nps.total_detractors: "#ed6168"
+      Email - nps.total_promoters: "#777777"
+      Web App - nps.total_promoters: "#292929"
+      Row Total - nps.total_promoters: "#74bab3"
+      Email - nps.total_passives: "#a3a3a3"
+      Web App - nps.total_passives: "#8d8d8d"
+      Row Total - nps.total_passives: "#ede05f"
+      Email - nps.total_detractors: "#d0d0d0"
+      Web App - nps.total_detractors: "#e7e7e7"
+      Row Total - nps.total_detractors: "#edb7bf"
     series_labels:
-      Email - internalnps.total_promoters: Email - Promoters
-      Web App - internalnps.total_promoters: Web App - Promoters
-      Row Total - internalnps.total_promoters: Overall - Promoters
-      Email - internalnps.total_passives: Email - Passives
-      Web App - internalnps.total_passives: Web App - Passives
-      Row Total - internalnps.total_passives: Overall - Passives
-      Email - internalnps.total_detractors: Email - Detractors
-      Web App - internalnps.total_detractors: Web App - Detractors
-      Row Total - internalnps.total_detractors: Overall - Detractors
+      Email - nps.total_promoters: Email - Promoters
+      Web App - nps.total_promoters: Web App - Promoters
+      Row Total - nps.total_promoters: Overall - Promoters
+      Email - nps.total_passives: Email - Passives
+      Web App - nps.total_passives: Web App - Passives
+      Row Total - nps.total_passives: Overall - Passives
+      Email - nps.total_detractors: Email - Detractors
+      Web App - nps.total_detractors: Web App - Detractors
+      Row Total - nps.total_detractors: Overall - Detractors
     series_types: {}
     limit_displayed_rows: false
     limit_displayed_rows_values:
@@ -743,33 +743,33 @@
     - label: ''
       orientation: left
       series:
-      - id: Email - internalnps.total_promoters
+      - id: Email - nps.total_promoters
         name: Email - Promoters
-        axisId: internalnps.total_promoters
-      - id: Email - internalnps.total_passives
+        axisId: nps.total_promoters
+      - id: Email - nps.total_passives
         name: Email - Passives
-        axisId: internalnps.total_passives
-      - id: Email - internalnps.total_detractors
+        axisId: nps.total_passives
+      - id: Email - nps.total_detractors
         name: Email - Internalnps Number of Detractors
-        axisId: internalnps.total_detractors
-      - id: Web App - internalnps.total_promoters
+        axisId: nps.total_detractors
+      - id: Web App - nps.total_promoters
         name: Web App - Promoters
-        axisId: internalnps.total_promoters
-      - id: Web App - internalnps.total_passives
+        axisId: nps.total_promoters
+      - id: Web App - nps.total_passives
         name: Wen App - Passives
-        axisId: internalnps.total_passives
-      - id: Web App - internalnps.total_detractors
+        axisId: nps.total_passives
+      - id: Web App - nps.total_detractors
         name: Web App - Internalnps Number of Detractors
-        axisId: internalnps.total_detractors
-      - id: Row Total - internalnps.total_promoters
+        axisId: nps.total_detractors
+      - id: Row Total - nps.total_promoters
         name: Overall - Promoters
-        axisId: internalnps.total_promoters
-      - id: Row Total - internalnps.total_passives
+        axisId: nps.total_promoters
+      - id: Row Total - nps.total_passives
         name: Overall - Passives
-        axisId: internalnps.total_passives
-      - id: Row Total - internalnps.total_detractors
+        axisId: nps.total_passives
+      - id: Row Total - nps.total_detractors
         name: Row Total - Internalnps Number of Detractors
-        axisId: internalnps.total_detractors
+        axisId: nps.total_detractors
       showLabels: false
       showValues: true
       unpinAxis: false

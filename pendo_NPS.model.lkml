@@ -12,7 +12,7 @@ persist_with: pendo_sandbox_default_datagroup
 
 include: "*.dashboard.lookml"
 
-explore: internalnps {
-  label: "Pendo Internal NPS"
-  view_name: internalnps
+explore: nps {
+  label: "Pendo NPS"
+  view_name: nps
 }

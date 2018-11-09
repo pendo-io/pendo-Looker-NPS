@@ -1,5 +1,5 @@
-view: internalnps {
-  sql_table_name: PENDO.INTERNALNPS ;;
+view: nps {
+  sql_table_name: PENDO.NPS ;;
 
   dimension: accountid {
     type: string
