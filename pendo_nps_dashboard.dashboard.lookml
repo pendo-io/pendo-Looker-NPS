@@ -1,5 +1,5 @@
 - dashboard: pendo_nps_dashboard
-  title: Shared Pendo NPS Dashboard
+  title: Pendo NPS Dashboard
   layout: newspaper
   elements:
   - name: NPS Average - Email
