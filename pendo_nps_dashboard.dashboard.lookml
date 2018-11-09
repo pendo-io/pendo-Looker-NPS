@@ -1,4 +1,4 @@
-- dashboard: shared_pendo_nps_dashboard
+- dashboard: pendo_nps_dashboard
   title: Shared Pendo NPS Dashboard
   layout: newspaper
   elements:
