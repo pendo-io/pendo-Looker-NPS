@@ -1,5 +1,5 @@
 # Description
-[Pendo’s](http://pendo.io/) NPS is a simple and elegant measure of customer advocacy but it doesn’t tell you how the product experience impacts customer sentiment. Pendo brings together NPS scores with actual product usage data to show you which features are used most heavily by NPS promoters and detractors as well as variances across user segments. With this data you can identify areas of the product that need improvement, and guide detractors to the highest value features.
+NPS is a simple and elegant measure of customer advocacy but it doesn’t tell you how the product experience impacts customer sentiment. [Pendo](http://pendo.io/) brings together NPS scores with actual product usage data to show you which features are used most heavily by NPS promoters and detractors as well as variances across user segments. With this data you can identify areas of the product that need improvement, and guide detractors to the highest value features.
 
 This Pendo NPS Block allows you to go even deeper into your NPS data to gain additional insights by varying things like time period visualized, slice and dice between channel (in-app of email), as well as view response rates, ratings by type (promoter, passive, detractor).
 
