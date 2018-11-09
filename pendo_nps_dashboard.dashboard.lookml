@@ -164,50 +164,6 @@
     col: 8
     width: 8
     height: 3
-  - title: 30 Day NPS - Overall
-    name: 30 Day NPS - Overall
-    model: pendo_NPS
-    explore: nps
-    type: single_value
-    fields:
-    - nps.total_detractors
-    - nps.total_passives
-    - nps.total_promoters
-    - nps.count
-    filters:
-      nps.browsertime_date: 30 days
-    sorts:
-    - nps.count desc
-    limit: 500
-    dynamic_fields:
-    - table_calculation: calculation_1
-      label: Calculation 1
-      expression: "((${nps.total_promoters} / ${nps.count} - (${nps.total_detractors}\
-        \ / ${nps.count}))*100)"
-      value_format:
-      value_format_name:
-      _kind_hint: measure
-      _type_hint: number
-    query_timezone: America/Los_Angeles
-    custom_color_enabled: false
-    custom_color: forestgreen
-    show_single_value_title: true
-    single_value_title: 30 Day NPS - Overall
-    show_comparison: false
-    comparison_type: value
-    comparison_reverse_colors: false
-    show_comparison_label: true
-    series_types: {}
-    hidden_fields:
-    - nps.count
-    - nps.total_promoters
-    - nps.total_passives
-    - nps.total_detractors
-    listen: {}
-    row: 5
-    col: 12
-    width: 12
-    height: 3
   - title: 90 Day NPS - Overall
     name: 90 Day NPS - Overall
     model: pendo_NPS
@@ -1073,3 +1029,47 @@
     col: 16
     width: 8
     height: 10
+  - title: 30 Day NPS - Overall
+    name: 30 Day NPS - Overall
+    model: pendo_NPS
+    explore: nps
+    type: single_value
+    fields:
+    - nps.total_detractors
+    - nps.total_passives
+    - nps.total_promoters
+    - nps.count
+    filters:
+      nps.browsertime_date: 30 days
+    sorts:
+    - nps.count desc
+    limit: 500
+    dynamic_fields:
+    - table_calculation: calculation_1
+      label: Calculation 1
+      expression: "((${nps.total_promoters} / ${nps.count} - (${nps.total_detractors}\
+        \ / ${nps.count}))*100)"
+      value_format:
+      value_format_name: decimal_0
+      _kind_hint: measure
+      _type_hint: number
+    query_timezone: America/Los_Angeles
+    custom_color_enabled: false
+    custom_color: forestgreen
+    show_single_value_title: true
+    single_value_title: 30 Day NPS - Overall
+    show_comparison: false
+    comparison_type: value
+    comparison_reverse_colors: false
+    show_comparison_label: true
+    series_types: {}
+    hidden_fields:
+    - nps.count
+    - nps.total_promoters
+    - nps.total_passives
+    - nps.total_detractors
+    listen: {}
+    row: 5
+    col: 12
+    width: 12
+    height: 3
