@@ -4,7 +4,7 @@
   elements:
   - name: NPS Average - Email
     title: NPS Average - Email
-    model: pendo_sandbox
+    model: pendo_NPS
     explore: internalnps
     type: single_value
     fields:
@@ -76,7 +76,7 @@
     height: 3
   - name: NPS Average - Web App
     title: NPS Average - Web App
-    model: pendo_sandbox
+    model: pendo_NPS
     explore: internalnps
     type: single_value
     fields:
@@ -148,7 +148,7 @@
     height: 3
   - name: 30 Day NPS - Overall
     title: 30 Day NPS - Overall
-    model: pendo_sandbox
+    model: pendo_NPS
     explore: internalnps
     type: single_value
     fields:
@@ -191,7 +191,7 @@
     height: 3
   - title: 90 Day NPS - Overall
     name: 90 Day NPS - Overall
-    model: pendo_sandbox
+    model: pendo_NPS
     explore: internalnps
     type: single_value
     fields:
@@ -234,7 +234,7 @@
     height: 3
   - title: 1 Year NPS Trend - Overall and by Channel
     name: 1 Year NPS Trend - Overall and by Channel
-    model: pendo_sandbox
+    model: pendo_NPS
     explore: internalnps
     type: looker_line
     fields:
@@ -332,7 +332,7 @@
     height: 7
   - title: Number of NPS Responses Overall
     name: Number of NPS Responses Overall
-    model: pendo_sandbox
+    model: pendo_NPS
     explore: internalnps
     type: looker_line
     fields:
@@ -423,7 +423,7 @@
     height: 7
   - title: NPS Promoters - Last 10 with Comments
     name: NPS Promoters - Last 10 with Comments
-    model: pendo_sandbox
+    model: pendo_NPS
     explore: internalnps
     type: table
     fields:
@@ -478,7 +478,7 @@
     height: 10
   - title: NPS Detractors - Last 10 with Comments
     name: NPS Detractors - Last 10 with Comments
-    model: pendo_sandbox
+    model: pendo_NPS
     explore: internalnps
     type: table
     fields:
@@ -547,7 +547,7 @@
     height: 5
   - title: NPS Rating - Overall
     name: NPS Rating - Overall
-    model: pendo_sandbox
+    model: pendo_NPS
     explore: internalnps
     type: single_value
     fields:
@@ -616,7 +616,7 @@
     height: 3
   - title: NPS Passive - Last 10 with Comments
     name: NPS Passive - Last 10 with Comments
-    model: pendo_sandbox
+    model: pendo_NPS
     explore: internalnps
     type: table
     fields:
@@ -672,7 +672,7 @@
     height: 10
   - title: NPS Promoters-Passive-Detractors by Channel
     name: NPS Promoters-Passive-Detractors by Channel
-    model: pendo_sandbox
+    model: pendo_NPS
     explore: internalnps
     type: looker_column
     fields:
