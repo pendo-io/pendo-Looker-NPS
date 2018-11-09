@@ -12,34 +12,7 @@ persist_with: pendo_sandbox_default_datagroup
 
 include: "*.dashboard.lookml"
 
-explore: featureevents {
-  label: "Pendo Sandbox Feature Events"
-  view_name: featureevents
-
-join: allfeatures {
-  view_label: "Feature Events"
-  relationship: many_to_one
-  sql_on: ${featureevents.feature_id} = ${allfeatures.id} ;;
-}
-}
-
-explore: pageevents {
-  label: "Pendo Sandbox Page Events"
-  view_name: pageevents
-
-  join: allpages {
-    view_label: "Page Events"
-    relationship: many_to_one
-    sql_on: ${pageevents.page_id} = ${allpages.id} ;;
-  }
-}
-
 explore: internalnps {
   label: "Pendo Internal NPS"
   view_name: internalnps
-}
-
-explore: internalvox {
-  label: "Pendo Internal Vox Signups"
-  view_name: internalvox
 }
