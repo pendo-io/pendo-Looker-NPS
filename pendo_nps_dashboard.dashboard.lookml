@@ -535,20 +535,6 @@
     col: 16
     width: 8
     height: 10
-  - name: Pendo NPS
-    type: text
-    title_text: Pendo NPS
-    subtitle_text: Why you should care about NPS and how Pendo can help
-    body_text: |-
-      Are you new to NPS (Net Promoter Score) and want to learn more?  Start with [an overview of NPS ](https://www.pendo.io/vox/?utm_medium=cpc&utm_source=google&utm_campaign=1474681646-58843506444&utm_content=282821087494--kwd-155846096-c&utm_term=nps-p&gclid=EAIaIQobChMIoeWlh53C3gIVTj0MCh2ZhA7bEAAYASAAEgKcuPD_BwE) from Pendo.
-
-      Or, take a test drive of Pendo NPS with [this demo](https://www.pendo.io/product/nps/).
-
-      Still wanting more?  check out [Pendo's NPS eBook](http://go.pendo.io/Big-NPS-Playbook.html) or, better yet, install [Pendo Vox](https://www.pendo.io/vox/?utm_medium=cpc&utm_source=google&utm_campaign=1474681646-58843506444&utm_content=282821087494--kwd-155846096-c&utm_term=nps-p&gclid=EAIaIQobChMIoeWlh53C3gIVTj0MCh2ZhA7bEAAYASAAEgKcuPD_BwE) - a free version of Pendo's NPS solution - in your application.
-    row: 0
-    col: 0
-    width: 24
-    height: 5
   - title: NPS Rating - Overall
     name: NPS Rating - Overall
     model: pendo_NPS
@@ -1073,3 +1059,17 @@
     col: 12
     width: 12
     height: 3
+  - name: Pendo NPS
+    type: text
+    title_text: Pendo NPS
+    subtitle_text: Why you should care about NPS and how Pendo can help
+    body_text: |-
+      Are you new to NPS (Net Promoter Score) and want to learn more?  Start with [an overview of NPS ](https://www.pendo.io/vox/?utm_medium=cpc&utm_source=google&utm_campaign=1474681646-58843506444&utm_content=282821087494--kwd-155846096-c&utm_term=nps-p&gclid=EAIaIQobChMIoeWlh53C3gIVTj0MCh2ZhA7bEAAYASAAEgKcuPD_BwE) from Pendo.
+
+      Better yet, take a test drive of Pendo NPS with [this demo](https://www.pendo.io/product/nps/).
+
+      Still wanting more?  check out [Pendo's Big NPS Playbook](http://go.pendo.io/Big-NPS-Playbook.html) or, better yet, install [Pendo Vox](https://www.pendo.io/vox/?utm_medium=cpc&utm_source=google&utm_campaign=1474681646-58843506444&utm_content=282821087494--kwd-155846096-c&utm_term=nps-p&gclid=EAIaIQobChMIoeWlh53C3gIVTj0MCh2ZhA7bEAAYASAAEgKcuPD_BwE) - a free version of Pendo's NPS solution - in your application.
+    row: 0
+    col: 0
+    width: 24
+    height: 5
